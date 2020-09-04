@@ -1,5 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import App from './components/App';
+import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 
-ReactDOM.render(<App/>, document.getElementById('app')); //index.html의 app이라는 공간에다가 App 컴포넌트를 그리겠다.
+const theme = createMuiTheme({ //테마 명시 
+    typography: {
+        useNextVariants: true,
+        fontFamily: '"Noto Sans KR"'
+    }
+});
+
+ReactDOM.render(
+    <MuiThemeProvider theme={theme}><App/></MuiThemeProvider>,
+    document.getElementById(
+        'app'
+    )
+);
